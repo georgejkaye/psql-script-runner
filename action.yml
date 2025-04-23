@@ -4,6 +4,10 @@ inputs:
   host:
     description: The db host
     required: true
+  port:
+    description: The db port
+    required: false
+    default: 5432
   name:
     description: The db name
     required: true
@@ -24,6 +28,7 @@ runs:
   image: Dockerfile
   args:
     - ${{ inputs.host }}
+    - ${{ inputs.port }}
     - ${{ inputs.name }}
     - ${{ inputs.user }}
     - ${{ inputs.password }}
