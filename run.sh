@@ -14,6 +14,7 @@ printenv
 touch /home/user/.pgpass
 chmod 0600 /home/user/.pgpass
 echo "$DB_HOST:$DB_PORT:$DB_NAME:$DB_USER:$DB_PASSWORD" > /home/user/.pgpass
+cat /home/`whoami`/.pgpass
 
 for file in $DATA_DIR/*sql; do
     psql -h $DB_HOST -p $DB_PORT -U $DB_USER -d $DB_NAME -f $file -w
