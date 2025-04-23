@@ -14,7 +14,7 @@ printenv
 echo "$DB_HOST:$DB_PORT:$DB_NAME:$DB_USER:$DB_PASSWORD" > $PGPASSFILE
 
 pwd
-ls .
+cd $GITHUB_WORKSPACE
 ls ./$DATA_DIR
 ls ./$DATA_DIR/*sql
 
