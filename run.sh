@@ -13,6 +13,7 @@ CODE_DIR=$7
 printenv
 echo "$DB_HOST:$DB_PORT:$DB_NAME:$DB_USER:$DB_PASSWORD" > $PGPASSFILE
 
+ls
 ls $DATA_DIR/*sql
 
 for file in $DATA_DIR/*sql; do
