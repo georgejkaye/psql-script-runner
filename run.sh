@@ -10,14 +10,8 @@ DB_PASSWORD=$5
 DATA_DIR=$6
 CODE_DIR=$7
 
-PGPASSFILE=/home/user/.pgpass
-
 printenv
-touch $PGPASSFILE
-chmod 0600 $PGPASSFILE
 echo "$DB_HOST:$DB_PORT:$DB_NAME:$DB_USER:$DB_PASSWORD" > $PGPASSFILE
-
-cat /home/`whoami`/.pgpass
 
 echo $DB_HOST $DB_PORT $DB_NAME $DB_USER
 
