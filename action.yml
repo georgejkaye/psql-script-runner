@@ -1,0 +1,31 @@
+name: Postgres script runner
+description: Run in procedures and data scripts to a postgres database
+inputs:
+  host:
+    description: The db host
+    required: true
+  name:
+    description: The db name
+    required: true
+  user:
+    description: The db user
+    required: true
+  password:
+    description: The db password
+    required: true
+  data-dir:
+    description: The directory in the repo containing data scripts
+    required: false
+  code-dir:
+    description: The directory in the repo containing code scripts
+    required: false
+  runs:
+    using: docker
+    image: Dockerfile
+    args:
+      - ${{ inputs.host }}
+      - ${{ inputs.name }}
+      - ${{ inputs.user }}
+      - ${{ inputs.password }}
+      - ${{ inputs.data-dir }}
+      - ${{ inputs.code-dir }}
