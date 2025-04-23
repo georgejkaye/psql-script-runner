@@ -19,13 +19,13 @@ inputs:
   code-dir:
     description: The directory in the repo containing code scripts
     required: false
-  runs:
-    using: docker
-    image: Dockerfile
-    args:
-      - ${{ inputs.host }}
-      - ${{ inputs.name }}
-      - ${{ inputs.user }}
-      - ${{ inputs.password }}
-      - ${{ inputs.data-dir }}
-      - ${{ inputs.code-dir }}
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.host }}
+    - ${{ inputs.name }}
+    - ${{ inputs.user }}
+    - ${{ inputs.password }}
+    - ${{ inputs.data-dir }}
+    - ${{ inputs.code-dir }}
