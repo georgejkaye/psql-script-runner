@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Set up db credentials in ~/.pgpass file
 DB_HOST=$1
 DB_PORT=$2
