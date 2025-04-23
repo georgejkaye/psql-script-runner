@@ -6,7 +6,7 @@ COPY run.sh /run.sh
 
 RUN chmod +x /run.sh
 
-RUN adduser user
+RUN adduser user --disabled-password
 USER user
 
 ENTRYPOINT [ "/run.sh" ]
