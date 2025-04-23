@@ -6,7 +6,7 @@ COPY run.sh /run.sh
 
 RUN chmod +x /run.sh
 
-RUN adduser postgres
-USER postgres
+RUN adduser user
+USER user
 
 ENTRYPOINT [ "/run.sh" ]
