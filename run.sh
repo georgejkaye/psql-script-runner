@@ -14,9 +14,9 @@ printenv
 echo "$DB_HOST:$DB_PORT:$DB_NAME:$DB_USER:$DB_PASSWORD" > $PGPASSFILE
 
 pwd
-ls
-ls $DATA_DIR
-ls $DATA_DIR/*sql
+ls .
+ls ./$DATA_DIR
+ls ./$DATA_DIR/*sql
 
 for file in $DATA_DIR/*sql; do
     echo $file
