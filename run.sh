@@ -11,13 +11,16 @@ DATA_DIR=$6
 CODE_DIR=$7
 
 whoami
+pwd
+ls -l
 touch /home/user/.pgpass
 chmod 0600 /home/user/.pgpass
 echo "$DB_HOST:$DB_PORT:$DB_NAME:$DB_USER:$DB_PASSWORD" > /home/user/.pgpass
 cat /home/user/.pgpass
+git status
 
 for file in $DATA_DIR/*sql; do
-    psql -h $DB_HOST -p $DB_PORT -U $DB_USER -d $DB_NAME -f $file
+    psql -h $DB_HOST -p $DB_PORT -U $DB_USER -d $DB_NAME -f $file -w
     rm $file
     git add $file
 done
